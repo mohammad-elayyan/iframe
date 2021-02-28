@@ -16,8 +16,8 @@
         body {}
 
         .f {
-            width: 100%;
-            height: 100vh;
+            width: 100% !important;
+            height: 100vh !important;
         }
 
         .b,
@@ -79,6 +79,9 @@
         zoom.addEventListener('click', () => {
             let width = f.offsetWidth * 1.2;
             let height = f.offsetHeight * 1.2;
+            if (width >= 770 && height >= 770) {
+                zoom.removeEventListener();
+            }
             f.style.width = `${width}px`;
             f.style.height = `${height}px`;
         });
